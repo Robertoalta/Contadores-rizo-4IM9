@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+	<TITLE> Contadores de Rizo </TITLE>
+	</HEAD> 
+<BODY BGCOLOR=BLACK TEXT=WHITE>
+<P><HR WIDTH=100% COLOR=#FF4B58>
+	<TABLE BORDER=8 ALIGN=CENTER BGCOLOR=WHITE><B>
+	<TR>
+	<TD><STRONG><A HREF="#CONTADORES">1.Contadores</STRONG><BR></TD><BR>
+	<TD><STRONG><A HREF="#CONTADORES2">2.Contadores de Rizo</STRONG><BR></TD><BR>
+	<TD><STRONG><A HREF="#CONTADORES3">3.Contador Mod 16</STRONG><BR></TD><BR>
+	<TD><STRONG><A HREF="#CONTADORES4">4.Contador Mod 10</STRONG><BR></TD><BR>
+	<TD><STRONG><A HREF="#CONTADORES5">5.VIDEO MOD 10</STRONG><BR></TD><BR>	
+	<TD><STRONG><A HREF="#CONTADORES6">6.Referencias</STRONG><BR></TD><BR>	
+	<TD><STRONG><A HREF="index.HTML" TARGET="PRINCIPAL"> Regresar a Inicio.</STRONG></TD><BR>
+	
+	</TR>
+	</TABLE>
+	<P><BR></P>
+	<HR WIDTH=100% COLOR=#FF4B58 ></P>
+
+
+
+
+
+
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+	<font face="ALGERIAN" size=5 >
+	<P BGCOLOR=#FF4B58><A NAME="CONTADORES"><CENTER><BIG><BIG>CONTADORES</BIG></BIG></CENTER></P> 
+	</FONT>
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+
+<P>
+Los contadores son circuitos digitales lógicos secuenciales de salida o cuenta binarias; están constituidos a base de flip-flops. Estos generan una serie de combinaciones a sus salidas sincronizadas por una señal de reloj externa.
+
+Se puede clasificar a los contadores según el comportamiento con la señal de reloj, síncronos y asíncronos. En esta ocasión nos enfocaremos en los contadores asíncronos como es el contador de Rizo.
+<BR>Contadores<br>
+Contador digital:<br>
+Es todo circuito o dispositivo que genera una serie de
+combinaciones a sus salidas sincronizadas por una señal de
+reloj externa.<br><br>
+Clasificaciones:
+Según el comportamiento con la señal de reloj:<br>
+Contadores asincrónicos.<br>
+Contadores sincrónicos.<br><br>
+Según el formato de salida del conteo:<br>
+Binario.<br>
+BCD (Decimal Codificado en Binario)<br>
+Arbitrario.<br><br>
+Según sentido de conteo:<br>
+Conteo ascendente ó progresivo.<br>
+Conteo descendente ó regresivo.<br><br>
+</P>
+<CENTER><img src="1.PNG" WIDTH=35%></CENTER>
+
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+	<font face="ALGERIAN" size=5 >
+	<P BGCOLOR=#FF4B58><A NAME=CONTADORES2><CENTER><BIG><BIG>Contadores de Rizo.</BIG></BIG></CENTER></P> 
+	</FONT>
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+<p>
+
+Son dispositivos contadores que tienen conectados los flip-flops 
+en forma asíncrona, es decir, que no, tienen conectadas las entradas 
+de reloj (CLK) en paralelo, sino que tiene que esperar que el primer 
+flip-flop, al activarse por el pulso conmute generando una salida, la
+ cual active o coloque en modo de conmutación al siguiente flip-flop,
+ el cual con el siguiente pulso conmuta activando al siguiente y asi 
+sucesivamente. puede calcularse con la ecuación  2<SUB>N</SUB> = MOD N<BR> 
+El conteo comienza con el 0 binario, por lo que si tenemos un contador de rizo de 4 bits (2<SUP>4</SUP> =16), comenzará en 0 binario, llegará a 15 binario y el conteo se reinicia en 0 para repetir la cuenta.
+<BR>Se debe notar que el LSB (Least Significant Bit), el bit menos significativo siempre se va a encontrar a la derecha y el MSB(Most Significant Bit), el bit más significativo se va a encontrar a la izquierda. 
+<BR>El modo de conmutación en los flip-flop se consigue 
+colocando las entradas J y K en ALTA (1 lógico).
+El módulo de un contador está determinado por la cuenta máxima 
+a la que es diseñado, es decir, si el contador es diseñado para que cuente
+ de 0 a 15 su módulo es el 16 (contador módulo 16) y simplificado se denomina
+ contador mod-16, si es diseñado para contar de 0 a 9 será un contador módulo 
+10 o mod-10, etc. Si se desea que la cuenta sea ascendente, se debe tomar la salida de Q; en el caso contrario, si la cuenta se desea descendente, la salida debe tomarse de Q', la cuenta será de 9 a 0.</P><BR>
+
+<BR>
+<P><CENTER><img src="2.PNG" WIDTH=35%></CENTER></P>
+
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+	<font face="ALGERIAN" size=5 >
+	<P BGCOLOR=#FF4B58><A NAME=CONTADORES3><CENTER><BIG><BIG>Contador MOD 16</BIG></BIG></CENTER></P> 
+	</FONT>
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+
+<P>
+Ahora mostraremos el esquema electronico de un contador mod 16 ascendente con salida a led, hecho en softwer (Proteus).
+Para la construcción del mod 16 se decidió utilizar 4 FF tipo JK, fueron necesarios 4 FF para que 24 =16 y nos entregue la cuenta hasta 16, se conectaron las entradas “J” y”K” a positivo para generar una salida conmutada cada vez que reciban una señal de reloj.
+En el flipflop considerado el menos significativo se coloco una señal de reloj y la salida ¡Q(Q negada) de este FF es la señal de reloj del siguiente flip flop de esta forma se va dividiendo la frecuencia de cada FF y se va generando la secuencia binaria del contador mod 16.
+En la salida Q de cada flip flop se conectaron leds para que vayan marcando la secuencia de nuestro contador
+</P>
+<P> En las siguientes imagenes se muestra el conteo en binario (leds).<br> En esta se muestra el 0 (0000 en binario).</P>
+<P><CENTER><img src="M0.JPEG" WIDTH=35%></CENTER></P>
+
+<P>  En esta se muestra el 1 (0001 en binario).</P>
+<P><CENTER><img src="M1.JPEG" WIDTH=35%></CENTER></P>
+
+<P>  En esta se muestra el 2 (0010 en binario).</P>
+<P><CENTER><img src="M2.JPEG" WIDTH=35%></CENTER></P>
+
+
+<P>  En esta se muestra el 3 (0011 en binario).</P>
+<P><CENTER><img src="M3.JPEG" WIDTH=35%></CENTER></P>
+
+<P>  Así, hasta llegar al 15 (1111 en binario), para así despúes repetir <br>el conteo binario.</P>
+<P><CENTER><img src="M15.JPEG" WIDTH=35%></CENTER></P>
+
+
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+	<font face="ALGERIAN" size=5 >
+	<P BGCOLOR=#FF4B58><A NAME=CONTADORES4><CENTER><BIG><BIG>Contador MOD 10 Descendente</BIG></BIG></CENTER></P> 
+	</FONT>
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+
+<P>
+Ahora mostraremos un video donde explicamos el esquema electronico de un contador mod 10 descendente con salida a led y a display de anodo común, hecho en softwer (Proteus).
+</P>
+<P><CENTER>Agradecemos su visita</CENTER>
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+
+
+<center><A NAME=CONTADORES5><iframe width="560" height="315" src="https://www.youtube.com/embed/C3TCWW870K0"
+ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+
+
+<P><HR WIDTH=90% COLOR=#FF4B58></P>
+
+<font face="ALGERIAN" size=5 >
+	<P BGCOLOR=#FF4B58><A NAME=CONTADORES6><CENTER><BIG><BIG>referencias</BIG></BIG></CENTER></P> 
+	</FONT>
+	<P><HR WIDTH=100% COLOR=#FF4B58></P>
+
+<P>
+1.Jiménez,J,v.(5 de abril 2021).Contadores de rizado:mod 16. Recuperado de<br>:https://normas-apa.org/referencias/citar-pagina-web/#:~:text=%20%C2%BFC%C3%B3mo%20citar%20o%20referenciar%20una%20p%C3%A1gina%20web,editor%20para%20evitar%20que%20se%20repita.%20More%20<br>
+2.Parra V.(2016).Circuitos contadores, recuperado de:http//profesores.sanvalero.net/~arnadillo/Documentos/Apuntes/Equipos_Microprogramables/UD6_Circuitos%20Contadores/UD6_Circuitos%20Contadores.pdf<br>
+3.Fernandez H. F. (28 de Septiembre 2011). Contadores Asincronos.Algunas ideas de ingenieria (2011). Recuperado de:http://hflorezf-es.blogspot.com/2011/09/contadores-asincronos.html
+</P>
+
+</BODY>
+</HTML>
